@@ -16,17 +16,6 @@ In **Project 1**, I designed a relational database for the fictional social medi
 1. **ER Diagram**: I created an ER diagram representing the business rules of the Fakebook platform.
 2. **SQL Scripts**: I wrote SQL scripts to create, load, and drop database objects according to the ER diagram.
 
-## Team Requirement
-
-The project was completed in a **team of 2 students**. We worked together to design and implement the solution. Both team members received the same score based on the highest submission.
-
-## Submission Deadline
-
-The project was due on **September 24th at 11:45 PM EST**.
-
-## Honor Code
-
-I adhered to the Honor Code by not sharing answers with others and working independently with my teammate. I consulted publicly available resources and Piazza for clarification, but did not seek unauthorized aid.
 
 ## Part 1: Creating an ER Diagram
 
