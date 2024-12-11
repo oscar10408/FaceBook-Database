@@ -72,4 +72,139 @@ Once you have written the two SQL scripts, follow the steps below to run them us
    ```
 
 ##  Desired Schema
+# Fakebook Database Schema
+
+## Users Table
+
+| Column           | Type        | Required |
+|------------------|-------------|----------|
+| user_id          | INTEGER     | yes      |
+| first_name       | VARCHAR2(100)| yes      |
+| last_name        | VARCHAR2(100)| yes      |
+| year_of_birth    | INTEGER     | yes      |
+| month_of_birth   | INTEGER     | yes      |
+| day_of_birth     | INTEGER     | yes      |
+| gender           | VARCHAR2(100)| yes      |
+
+## Friends Table
+
+| Column     | Type    | Required |
+|------------|---------|----------|
+| user1_id   | INTEGER | yes      |
+| user2_id   | INTEGER | yes      |
+
+**Important**: This table should not allow duplicate friendships. The combination `(user1_id, user2_id)` and `(user2_id, user1_id)` should be treated as the same.
+
+## Cities Table
+
+| Column       | Type        | Required |
+|--------------|-------------|----------|
+| city_id      | INTEGER     | yes      |
+| city_name    | VARCHAR2(100)| yes      |
+| state_name   | VARCHAR2(100)| yes      |
+| country_name | VARCHAR2(100)| yes      |
+
+## User_Current_Cities Table
+
+| Column        | Type    | Required |
+|---------------|---------|----------|
+| user_id       | INTEGER | yes      |
+| current_city_id | INTEGER | yes    |
+
+## User_Hometown_Cities Table
+
+| Column           | Type    | Required |
+|------------------|---------|----------|
+| user_id          | INTEGER | yes      |
+| hometown_city_id | INTEGER | yes      |
+
+## Messages Table
+
+| Column          | Type        | Required |
+|-----------------|-------------|----------|
+| message_id      | INTEGER     | yes      |
+| sender_id       | INTEGER     | yes      |
+| receiver_id     | INTEGER     | yes      |
+| message_content | VARCHAR2(2000)| yes    |
+| sent_time       | TIMESTAMP   | yes      |
+
+## Programs Table
+
+| Column         | Type        | Required |
+|----------------|-------------|----------|
+| program_id     | INTEGER     | yes      |
+| institution    | VARCHAR2(100)| yes     |
+| concentration  | VARCHAR2(100)| yes     |
+| degree         | VARCHAR2(100)| yes     |
+
+## Education Table
+
+| Column       | Type        | Required |
+|--------------|-------------|----------|
+| user_id      | INTEGER     | yes      |
+| program_id   | INTEGER     | yes      |
+| program_year | INTEGER     | yes      |
+
+## User_Events Table
+
+| Column           | Type        | Required |
+|------------------|-------------|----------|
+| event_id         | INTEGER     | yes      |
+| event_creator_id | INTEGER     | yes      |
+| event_name       | VARCHAR2(100)| yes     |
+| event_tagline    | VARCHAR2(100)| no      |
+| event_description| VARCHAR2(100)| no      |
+| event_host       | VARCHAR2(100)| no      |
+| event_type       | VARCHAR2(100)| no      |
+| event_subtype    | VARCHAR2(100)| no      |
+| event_address    | VARCHAR2(2000)| no     |
+| event_city_id    | INTEGER     | yes      |
+| event_start_time | TIMESTAMP   | no      |
+| event_end_time   | TIMESTAMP   | no      |
+
+## Participants Table
+
+| Column        | Type        | Required |
+|---------------|-------------|----------|
+| event_id      | INTEGER     | yes      |
+| user_id       | INTEGER     | yes      |
+| confirmation  | VARCHAR2(100)| yes     |
+
+**Important**: The value of `confirmation` must be one of the following: `Attending`, `Unsure`, `Declines`, `Not_Replied`.
+
+## Albums Table
+
+| Column             | Type        | Required |
+|--------------------|-------------|----------|
+| album_id           | INTEGER     | yes      |
+| album_owner_id     | INTEGER     | yes      |
+| album_name         | VARCHAR2(100)| yes     |
+| album_created_time | TIMESTAMP   | yes      |
+| album_modified_time| TIMESTAMP   | no      |
+| album_link         | VARCHAR2(2000)| yes    |
+| album_visibility   | VARCHAR2(100)| yes     |
+| cover_photo_id     | INTEGER     | yes      |
+
+**Important**: The value of `album_visibility` must be one of the following: `Everyone`, `Friends`, `Friends_Of_Friends`, or `Myself`.
+
+## Photos Table
+
+| Column             | Type        | Required |
+|--------------------|-------------|----------|
+| photo_id           | INTEGER     | yes      |
+| album_id           | INTEGER     | yes      |
+| photo_caption      | VARCHAR2(2000)| no     |
+| photo_created_time | TIMESTAMP   | yes      |
+| photo_modified_time| TIMESTAMP   | no      |
+| photo_link         | VARCHAR2(2000)| yes    |
+
+## Tags Table
+
+| Column           | Type        | Required |
+|------------------|-------------|----------|
+| tag_photo_id     | INTEGER     | yes      |
+| tag_subject_id   | INTEGER     | yes      |
+| tag_created_time | TIMESTAMP   | yes      |
+| tag_x            | NUMBER      | yes      |
+| tag_y            | NUMBER      | yes      |
 
