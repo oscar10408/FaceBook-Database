@@ -43,7 +43,7 @@ For this part, I designed an ER diagram that accurately reflects the key feature
 ## Part 2: Creating the Data Tables
 
 ## Overview
-For the second task of Project 1, you are required to write SQL DDL (Data Definition Language) statements to create and drop data tables that reflect the **Fakebook** specifications. You will need to write two SQL scripts:
+For the second task of Project 1, I am required to write SQL DDL (Data Definition Language) statements to create and drop data tables that reflect the Fakebook specifications. I need to write two SQL scripts:
 
 1. **createTables.sql**: This script will create the necessary data tables.
 2. **dropTables.sql**: This script will drop (destroy) the data tables.
@@ -53,7 +53,7 @@ These scripts should also create and drop any necessary constraints, sequences, 
 ## Steps
 
 ### 1. Writing the SQL Scripts
-You should create two SQL scripts:
+Create two SQL scripts:
 
 - **createTables.sql**: This script will:
   - Create all the necessary tables.
@@ -209,8 +209,8 @@ Once you have written the two SQL scripts, follow the steps below to run them us
 | tag_y            | NUMBER      | yes      |
 
 ## Friends Trigger
-Triggers are used in SQL to execute code automatically when specific events occur, such as inserting or updating data in a table. For this project, you'll use a trigger to enforce the uniqueness constraint on the FRIENDS table by ensuring that any pair of friend IDs is sorted. This prevents duplicate entries like **(1, 9)** and **(9, 1)**.
-The DDL to create this trigger should be included in your createTables.sql script. Here’s the full syntax for the trigger:
+Triggers are used in SQL to automatically execute code when certain events occur, such as inserting or updating data in a table. For this project, I will use a trigger to enforce the uniqueness constraint on the FRIENDS table. Specifically, the trigger will ensure that any pair of friend IDs is sorted, maintaining consistency and preventing duplicate entries. This way, regardless of the order in which the friend IDs are inserted, the trigger will sort them to preserve uniqueness in the relationship. This prevents duplicate entries like **(1, 9)** and **(9, 1)**.
+The DDL to create this trigger should be included in createTables.sql script. Here’s the full syntax for the trigger:
 ```sql
 CREATE TRIGGER Order_Friend_Pairs
     BEFORE INSERT ON Friends
