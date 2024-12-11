@@ -226,3 +226,29 @@ CREATE TRIGGER Order_Friend_Pairs
 ```
 
 ## Part 3: Populating Your Database
+### Overview
+The third part of **Project 1** is to load data from the public dataset (a poorly designed database) into the tables you just created (a well-designed database). To accomplish this, you need to write SQL DML (Data Manipulation Language) statements that **SELECT** the appropriate data from the public dataset and **INSERT** it into your newly created tables. 
+
+You may also need to use SQL statements like:
+
+- **DISTINCT**
+- **JOIN**
+- **WHERE**
+- **INTERSECT**
+- **UNION**
+- **MINUS**
+
+These will help you manipulate and filter the data as required during the insertion process.
+
+### Script Requirements
+Place all your **DML statements** into a single file named `loadData.sql`. This file will be responsible for transferring data from the public dataset into your structured tables.
+
+While you can copy the public dataset to your own SQL*Plus account for development and testing, **your scripts will not have access** to this private copy when the Autograder runs your scripts for grading. Therefore, make sure you reference the public dataset correctly in your SQL queries.
+
+### Loading Fakebook Friends
+When loading the **Fakebook friends** data, you must handle the fact that friendship is **reciprocal**. This means if the public dataset contains both `(2, 7)` and `(7, 2)`, only one of them should be loaded into your `Friends` table. It doesn’t matter which one you choose, as long as you only load one pair.
+
+The **Friends Trigger** will automatically ensure the direction of friendship is preserved. However, you must ensure that only one directional pair of friends is selected from the public dataset.
+
+### Conclusion
+By following these steps, you will successfully load the data from the public dataset into your well-designed tables while adhering to the necessary constraints and requirements.
