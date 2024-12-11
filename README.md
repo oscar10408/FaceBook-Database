@@ -367,11 +367,11 @@ The five views I need to create are as follows:
 
 The following steps should allow me to execute the project sequentially without error:
 ```sql
-    SQL> @createTables
-    SQL> @loadData
-    SQL> @createViews
-    SQL> @dropViews
-    SQL> @dropTables
+1. SQL> @createTables
+2. SQL> @loadData
+3. SQL> @createViews
+4. SQL> @dropViews
+5. SQL> @dropTables
 ```
 
 ### Notes
