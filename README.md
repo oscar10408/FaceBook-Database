@@ -70,3 +70,6 @@ Once you have written the two SQL scripts, follow the steps below to run them us
    SQL> @createTables
    SQL> @dropTables
    ```
+
+##  Desired Schema
+
