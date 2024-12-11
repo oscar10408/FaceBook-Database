@@ -224,3 +224,5 @@ CREATE TRIGGER Order_Friend_Pairs
             END IF;
         END;
 ```
+
+## Part 3: Populating Your Database
