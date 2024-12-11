@@ -40,8 +40,36 @@ For this part, I designed an ER diagram that accurately reflects the key feature
 - I ensured that the ER diagram accurately represented the required relationships and constraints.
 - While some constraints couldn’t be directly modeled in the ER diagram, I implemented them later through SQL scripts.
 
-## Team Instructions
+# Project 1 - Task 2: SQL DDL Statements for Fakebook Database
 
-1. Created the team on the Autograder before submitting.
-2. Followed project guidelines and adhered to the Honor Code.
-3. Focused on designing a clean, accurate ER diagram and implementing it effectively with SQL scripts.
+## Overview
+For the second task of Project 1, you are required to write SQL DDL (Data Definition Language) statements to create and drop data tables that reflect the **Fakebook** specifications. You will need to write two SQL scripts:
+
+1. **createTables.sql**: This script will create the necessary data tables.
+2. **dropTables.sql**: This script will drop (destroy) the data tables.
+
+These scripts should also create and drop any necessary constraints, sequences, and triggers required to enforce the rules defined in the Fakebook specification.
+
+## Steps
+
+### 1. Writing the SQL Scripts
+You should create two SQL scripts:
+
+- **createTables.sql**: This script will:
+  - Create all the necessary tables.
+  - Create any required constraints (such as foreign keys).
+  - Create sequences and triggers needed to enforce database rules.
+
+- **dropTables.sql**: This script will:
+  - Drop all the tables created in `createTables.sql`.
+  - Drop the corresponding constraints, sequences, and triggers.
+
+### 2. Running the Scripts
+Once you have written the two SQL scripts, follow the steps below to run them using SQL*Plus on your CAEN Linux machine.
+
+1. Open **SQL*Plus** on your CAEN Linux machine.
+2. Execute the `createTables.sql` script:
+   ```sql
+   SQL> @createTables
+   SQL> @dropTables
+   ```
