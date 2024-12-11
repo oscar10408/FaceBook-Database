@@ -343,3 +343,39 @@ Here is an overview of the public dataset. All table names and field names are c
 | event_start_time     | yes      | The time at which the event starts                                |
 | event_end_time       | yes      | The time at which the event ends                                  |
 
+
+## Part 4: Creating External Views
+
+In the final part of Project 1, I am tasked with creating a set of external views to display the data that I have loaded into the data tables. The views must have the exact same schema as the public dataset, meaning the column names and data types must match precisely.
+
+### Steps
+
+I will write two SQL scripts for this part of the project:
+1. **createViews.sql**: This script will create the views and load data into them.
+2. **dropViews.sql**: This script will drop/destroy the views.
+
+### Views to be Created
+
+The five views I need to create are as follows:
+1. **View_User_Information**: This view will display the public user information from the dataset.
+2. **View_Are_Friends**: This view will display information about the friendships between users.
+3. **View_Photo_Information**: This view will display information about photo albums and the associated photos.
+4. **View_Event_Information**: This view will display details about events and their attributes.
+5. **View_Tag_Information**: This view will display information about tags on photos.
+
+### SQL Scripts
+
+The following steps should allow me to execute the project sequentially without error:
+```sql
+    SQL> @createTables
+    SQL> @loadData
+    SQL> @createViews
+    SQL> @dropViews
+    SQL> @dropTables
+```
+
+### Notes
+
+- The views I create will use the exact schema from the public dataset to ensure compatibility with the dataset.
+- I will need to be cautious when writing the `createViews.sql` and `dropViews.sql` files to ensure the commands execute smoothly in sequence.
+- The goal is to be able to run the above commands multiple times without encountering errors.
