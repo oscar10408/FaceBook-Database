@@ -65,10 +65,7 @@ You should create two SQL scripts:
   - Drop the corresponding constraints, sequences, and triggers.
 
 ### 2. Running the Scripts
-Once you have written the two SQL scripts, follow the steps below to run them using SQL*Plus on your CAEN Linux machine.
-
-1. Open **SQL*Plus** on your CAEN Linux machine.
-2. Execute the `createTables.sql` script:
+Once you have written the two SQL scripts, follow the steps below to run them using SQL*Plus on your Linux machine.
    ```sql
    SQL> @createTables
    SQL> @dropTables
