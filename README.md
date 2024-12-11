@@ -40,7 +40,7 @@ For this part, I designed an ER diagram that accurately reflects the key feature
 - I ensured that the ER diagram accurately represented the required relationships and constraints.
 - While some constraints couldn’t be directly modeled in the ER diagram, I implemented them later through SQL scripts.
 
-## Part 2: SQL DDL Statements for Fakebook Database
+## Part 2: Creating the Data Tables
 
 ## Overview
 For the second task of Project 1, you are required to write SQL DDL (Data Definition Language) statements to create and drop data tables that reflect the **Fakebook** specifications. You will need to write two SQL scripts:
