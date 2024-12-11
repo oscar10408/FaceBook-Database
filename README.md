@@ -208,3 +208,19 @@ Once you have written the two SQL scripts, follow the steps below to run them us
 | tag_x            | NUMBER      | yes      |
 | tag_y            | NUMBER      | yes      |
 
+## Friends Trigger
+Triggers are used in SQL to execute code automatically when specific events occur, such as inserting or updating data in a table. For this project, you'll use a trigger to enforce the uniqueness constraint on the FRIENDS table by ensuring that any pair of friend IDs is sorted. This prevents duplicate entries like **(1, 9)** and **(9, 1)**.
+The DDL to create this trigger should be included in your createTables.sql script. Here’s the full syntax for the trigger:
+```sql
+CREATE TRIGGER Order_Friend_Pairs
+    BEFORE INSERT ON Friends
+    FOR EACH ROW
+        DECLARE temp INTEGER;
+        BEGIN
+            IF :NEW.user1_id > :NEW.user2_id THEN
+                temp := :NEW.user2_id;
+                :NEW.user2_id := :NEW.user1_id;
+                :NEW.user1_id := temp;
+            END IF;
+        END;
+```
