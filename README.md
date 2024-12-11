@@ -250,5 +250,96 @@ When loading the **Fakebook friends** data, you must handle the fact that friend
 
 The **Friends Trigger** will automatically ensure the direction of friendship is preserved. However, you must ensure that only one directional pair of friends is selected from the public dataset.
 
-### Conclusion
-By following these steps, you will successfully load the data from the public dataset into your well-designed tables while adhering to the necessary constraints and requirements.
+### The Public Dataset
+
+The public dataset is divided into five tables, each containing a series of data fields. These fields may have additional business rules or constraints that define the allowable values for each entry. When referring to these tables in your SQL scripts, you must use the **fully-qualified table name** by prepending `project1.` (including the period) to the table name. This is required when working with the dataset, as shown in Part 4: Creating External Views.
+
+Additionally, be cautious of common **SQL*Plus potholes** when constructing your queries to avoid potential errors or unexpected behavior.
+
+Here is an overview of the public dataset. All table names and field names are case-insensitive:
+### Public_User_Information
+
+| Column               | Required | Description                                                                 |
+|----------------------|----------|-----------------------------------------------------------------------------|
+| user_id              | yes      | The unique Fakebook ID of a user                                            |
+| first_name           | yes      | The user’s first name                                                       |
+| last_name            | yes      | The user’s last name                                                        |
+| year_of_birth        | yes      | The year in which the user was born                                         |
+| month_of_birth       | yes      | The month (as an integer) in which the user was born                        |
+| day_of_birth         | yes      | The day on which the user was born                                          |
+| gender               | yes      | The user’s gender                                                           |
+| current_city         | yes      | The user’s current city                                                     |
+| current_state        | yes      | The user’s current state                                                    |
+| current_country      | yes      | The user’s current country                                                  |
+| hometown_city        | yes      | The user’s hometown city                                                   |
+| hometown_state       | yes      | The user’s hometown state                                                  |
+| hometown_country     | yes      | The user’s hometown country                                                |
+| institution_name     | no       | The name of a college, university, or school that the user attended          |
+| program_year         | no       | The year in which the user graduated from some college, university, or school|
+| program_concentration| no       | The field in which the user studied at some college, university, or school  |
+| program_degree       | no       | The degree the user earned from some college, university, or school         |
+
+*Note:* If one of `institution_name`, `program_year`, `program_concentration`, or `program_degree` is provided, then all four columns will be provided. If none are provided, then all four columns will be empty.
+
+---
+
+### Public_Are_Friends
+
+| Column    | Required | Description                                                      |
+|-----------|----------|------------------------------------------------------------------|
+| user1_id  | yes      | The ID of the first of two Fakebook users in a friendship         |
+| user2_id  | yes      | The ID of the second of two Fakebook users in a friendship        |
+
+---
+
+### Public_Photo_Information
+
+| Column                 | Required | Description                                                  |
+|------------------------|----------|--------------------------------------------------------------|
+| album_id               | yes      | The unique Fakebook ID of an album                           |
+| owner_id               | yes      | The Fakebook ID of the user who owns the album               |
+| cover_photo_id         | yes      | The Fakebook ID of the album’s cover photo                   |
+| album_name             | yes      | The name of the album                                        |
+| album_created_time     | yes      | The time at which the album was created                      |
+| album_modified_time    | yes      | The time at which the album was last modified                |
+| album_link             | yes      | The Fakebook URL of the album                                |
+| album_visibility       | yes      | The visibility/privacy level for the album                   |
+| photo_id               | yes      | The unique Fakebook ID of a photo in the album               |
+| photo_caption          | yes      | The caption associated with the photo                        |
+| photo_created_time     | yes      | The time at which the photo was created                       |
+| photo_modified_time    | yes      | The time at which the photo was last modified                 |
+| photo_link             | yes      | The Fakebook URL of the photo                                |
+
+---
+
+### Public_Tag_Information
+
+| Column             | Required | Description                                                       |
+|--------------------|----------|-------------------------------------------------------------------|
+| photo_id           | yes      | The ID of a Fakebook photo                                        |
+| tag_subject_id     | yes      | The ID of the Fakebook user being tagged in the photo             |
+| tag_created_time   | yes      | The time at which the tag was created                             |
+| tag_x_coordinate   | yes      | The x-coordinate of the location at which the subject was tagged |
+| tag_y_coordinate   | yes      | The y-coordinate of the location at which the subject was tagged |
+
+---
+
+### Public_Event_Information
+
+| Column               | Required | Description                                                       |
+|----------------------|----------|-------------------------------------------------------------------|
+| event_id             | yes      | The unique Fakebook ID of an event                                |
+| event_creator_id     | yes      | The Fakebook ID of the user who created the event                 |
+| event_name           | yes      | The name of the event                                             |
+| event_tagline        | yes      | The tagline of the event                                          |
+| event_description    | yes      | A description of the event                                        |
+| event_host           | yes      | The host of the event, which does not need to identify a Fakebook user |
+| event_type           | yes      | One of a predefined set of event types                            |
+| event_subtype        | yes      | One of a predefined set of event subtypes based on the event’s type|
+| event_address        | yes      | The street address at which the event is to be held               |
+| event_city           | yes      | The city in which the event is to be held                         |
+| event_state          | yes      | The state in which the event is to be held                        |
+| event_country        | yes      | The country in which the event is to be held                      |
+| event_start_time     | yes      | The time at which the event starts                                |
+| event_end_time       | yes      | The time at which the event ends                                  |
+
